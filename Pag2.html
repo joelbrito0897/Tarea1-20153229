@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cajero Web</title>
+        <meta name="author" content="Joel Brito">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="Pag2Style.css" rel="stylesheet">
+    </head>
+    <body>
+
+         <header>
+            <nav class="AreaDeNavegacion">
+                <div class="BarraSuperior">
+                    <p class="TituloCajero">Cajero Web</p>
+                </div>
+            </nav>
+        </header>
+        <center>
+        <section class="Seccion1">
+            <div class="ContenedorSeccion1">
+                <div class="ListaIzq">
+                
+                <a class="Enlace" href="#" onclick="Consulta();"><button class="BotonConsulta"><p class="TextoBoton">Consulta</p></button></a>
+                </div>
+                </br></br></br></br></br></br></br></br></br></br>
+                <div class="ListaDrc">
+                
+                <a class="Enlace" href="#" onclick="Deposito();"><button class="BotonDeposito"><p class="TextoBoton">Deposito</p></button></a>
+                <a class="Enlace" href="#" onclick="Retiro();"><button class="BotonRetiro"><p class="TextoBoton">Retiro</p></button></a>
+                </div>
+                
+            </div>
+        </section>
+         <section class="Seccion2">
+                    <div class="ContenedorSeccion2">
+                        <p class="resultado" id="resultado">Resultado</p>
+                        <script>
+
+                            var x=new Object;
+                            var resul = document.getElementById('ContenedorSeccion2');
+
+                                x.saldo=10000;
+                                x.transacciones= new Array(); 
+
+                            function Consulta(){
+                                var a = document.getElementById('resultado');
+                                a.innerHTML="SALDO DISPONIBLE: " + x.saldo;
+                                
+                            }
+
+                            function Deposito(){
+                                var deposito=prompt("INGRESE LA CANTIDAD A DEPOSITAR");
+                                alert("GRACIAS POR UTILIZAR NUESTROS SERVICIOS");
+                                x.transacciones.push("+" + deposito);
+                                return x.saldo=x.saldo+ parseInt(deposito); 
+                            }
+
+                            function Retiro(){
+                                 var retiro=prompt("INGRESE LA CANTIDAD A RETIRAR");
+                                    if (x.saldo<retiro){
+                                    alert("NO CUENTA CON SUFUCIENTE SALDO")
+                                    return false;
+                                    } else {
+                                    alert("GRACIAS POR UTILIZAR NUESTROS SERVICIOS")
+                                    x.transacciones.push("-" + retiro);
+                                    return x.saldo=x.saldo-parseInt(retiro); }
+                            }
+                            
+
+                        </script>
+                    </div>
+        </center>
+        
+    
+    </body>
+</html>

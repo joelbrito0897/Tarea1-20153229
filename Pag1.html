@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cajero Web</title>
+        <meta name="author" content="Joel Brito">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="Pag1Style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="AreaDeNavegacion">
+                <div class="BarraSuperior">
+                    <p class="TituloCajero">Cajero Web</p>
+                </div>
+            </nav>
+        </header>
+        <center>
+
+        <section class="Seccion1">
+            <div class="ContenedorSeccion1">
+                <p class="TituloContenedor">Ingrese El Pin De La Cuenta:</p>
+                <input class="EntradaCuenta" type="password" id="Pin">
+                </br>
+                <script>
+                var x = document.getElementById('Pin');
+                function IrSeleccion(){
+                    if (x.value == 1234){
+                        setTimeout("location.href='Pag2.html'",50);
+                    }else if(x.values==''){
+                        alert("Debe Introducir el Pin: ");
+                    }
+                    else if (x.value != 1234){
+                        alert('Pin Incorrecto, Favor Introducirlo Nuevamente');
+                    }
+                }
+            </script>
+                <a class="Enlace"><button class="BotonAceptar" onclick="IrSeleccion()"><p class="TextoBoton">Aceptar</p></button></a>
+            </div>
+        </section>
+        </center>
+        
+    
+    </body>
+</html>
